@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-public class MyStack extends ArrayList {
+public class MyStack  {
     private ArrayList<Object> delegate;
 
     public MyStack() {
@@ -11,15 +11,24 @@ public class MyStack extends ArrayList {
     }
 
     public void push(Object item) {
-        this.add(item);
+        delegate.add(item);
     }
 
     public Object pop() {
         if (isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
-        return this.remove(this.size() - 1);
+        return delegate.remove(delegate.size() - 1);
     }
+
+    public boolean isEmpty() {
+        return delegate.isEmpty();
+    }
+
+    public int size() {
+        return delegate.size();
+    }
+
 
 
 
