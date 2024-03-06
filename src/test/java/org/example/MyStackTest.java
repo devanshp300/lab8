@@ -15,8 +15,15 @@ public class MyStackTest
         stack.push(2);
         assertEquals(2, stack.pop());
         assertEquals(1, stack.pop());
-
+        assertTrue(stack.isEmpty());
     }
+    @Test
+    void testPopEmptyStack() {
+        MyStack stack = new MyStack();
+        assertThrows(IllegalStateException.class, stack::pop);
+    }
+
+
 
 
 
